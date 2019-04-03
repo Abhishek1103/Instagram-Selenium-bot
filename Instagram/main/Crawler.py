@@ -2,16 +2,16 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-proxy = {"http":"http://edcguest:edcguest@172.31.100.29:3128/",
-        "https":"http://edcguest:edcguest@172.31.100.29:3128/"}
+proxy = {"http":"http://username:password@<proxy address>:<proxy port>/",
+        "https":"http://username:password@<proxy address>:<proxy port>/"}
 
 def create_driver(name):
     if name == "Chrome":
         driver = webdriver.Chrome(
-            executable_path="/home/aks/Documents/WebDevelopment/BrowserDrivers/chromedriver_linux64/chromedriver")
+            executable_path="<Path to the driver executable>")
     elif name == "Firefox":
         driver = webdriver.Firefox(
-            executable_path="/home/aks/Documents/WebDevelopment/BrowserDrivers/geckodriver-v0.24.0-linux64/geckodriver")
+            executable_path="<Path to the driver executable>")
     return driver
 
 
@@ -28,7 +28,7 @@ def create_driver(name):
 # driver.close()
 
 driver = create_driver("Chrome")
-driver.get("https://www.instagram.com/advait_vaidya/")
+driver.get("")
 driver.execute_script("window.scrollTo(0, 10000)")
 a = []
 time.sleep(10)
@@ -59,7 +59,7 @@ for lnk in links:
 
 print(len(image_links))
 
-with open('advait', 'w') as f:
+with open('av', 'w') as f:
     for il in image_links:
         f.write(il+"\n")
 

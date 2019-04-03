@@ -5,8 +5,8 @@ import signal, sys
 import requests
 import threading
 
-proxy = {"http":"http://edcguest:edcguest@172.31.100.29:3128/",
-        "https":"http://edcguest:edcguest@172.31.100.29:3128/"}
+proxy = {"http":"http://username:password@<proxy address>:<proxy port>/",
+        "https":"http://username:password@<proxy address>:<proxy port>/"}
 
 
 
@@ -28,10 +28,10 @@ def download_file(set_of_l, file_path):
 def create_driver(name):
     if name == "Chrome":
         driver = webdriver.Chrome(
-            executable_path="/home/aks/Documents/WebDevelopment/BrowserDrivers/chromedriver_linux64/chromedriver")
+            executable_path="<Path to the driver executable>")
     elif name == "Firefox":
         driver = webdriver.Firefox(
-            executable_path="/home/aks/Documents/WebDevelopment/BrowserDrivers/geckodriver-v0.24.0-linux64/geckodriver")
+            executable_path="<Path to the driver executable>")
     return driver
 
 
