@@ -37,7 +37,7 @@ def create_driver(name):
 
 # driver = create_driver("Firefox")
 #
-# driver.get("https://abhishek1103.github.io/aks.github.io/")
+# driver.get("<url>")
 # print(driver.title)
 #
 # #driver.find_element_by_id('button_download_resume').click()
@@ -52,7 +52,7 @@ set_of_links = set()
 
 def signal_handler(sig, frame):
     print("\nRECIEVED SIGINT")
-    with open('barkha', 'a') as f:
+    with open('file', 'a') as f:
         for il in set_of_links:
             try:
                 f.write(il + "\n")
@@ -66,9 +66,9 @@ signal.signal(signal.SIGINT, signal_handler)
 
 #profile_link = input("Enter the profile link of the account: ")
 #file_path = input("Enter the path of directory: ")
-file_path = "/home/aks/Pictures/Ladies/barkha_singh"
+file_path = "<path_to_download_dir>"
 driver = create_driver("Chrome")
-driver.get("https://www.instagram.com/barkhasingh0308/")
+driver.get("https://www.instagram.com/<instagram_handle>/")
 #driver.get(profile_link)
 
 SCROLL_PAUSE_TIME = 2
@@ -80,7 +80,7 @@ ii = 1
 i = 0
 while n < 25:
     try:
-        driver.get("https://www.instagram.com/barkhasingh0308/")
+        driver.get("https://www.instagram.com/<instagram_handle>/")
     except:
         break
     for j in range(ii):
@@ -157,7 +157,7 @@ while n < 25:
     #             pass
 
 
-with open('barkha', 'a') as f:
+with open('file', 'a') as f:
     for il in set_of_links:
         try:
             f.write(il+"\n")
